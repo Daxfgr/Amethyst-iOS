@@ -80,10 +80,10 @@ jobs:
           git push
 
       - name: Set up JDK 8
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 8
+        run: |
+          brew install --cask temurin8
+          echo "JAVA_HOME=$(/usr/libexec/java_home -v 1.8)" >> "$GITHUB_ENV"
+          echo "$(/usr/libexec/java_home -v 1.8)/bin" >> "$GITHUB_PATH"
 
       - name: Build for ${{ matrix.platform_name }}
         run: |
