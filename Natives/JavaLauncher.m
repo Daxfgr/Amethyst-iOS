@@ -1,4 +1,5 @@
 #include <dirent.h>
+#include <mach/mach.h>
 #include <dlfcn.h>
 #include <errno.h>
 #include <libgen.h>
