@@ -85,7 +85,7 @@ jobs:
 
       - name: Set up JDK 8
         run: |
-          brew install --cask temurin@8
+          HOMEBREW_NO_REQUIRE_TAP_TRUST=1 brew install --cask temurin@8
           echo "JAVA_HOME=$(/usr/libexec/java_home -v 1.8)" >> "$GITHUB_ENV"
           echo "$(/usr/libexec/java_home -v 1.8)/bin" >> "$GITHUB_PATH"
 
